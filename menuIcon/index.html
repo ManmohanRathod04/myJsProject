@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Icon</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        :root{
+            --sky-blue:#278ea5;
+            --mad-black:#222222;
+        }
+        .main{
+            height: 100vh;
+            background-color: var(--sky-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-bar{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+  cursor: pointer;
+        }
+
+        .bar1, .bar2, .bar3{
+            width: 40px;
+            height: 5px;
+            background-color: var(--mad-black);
+            margin-bottom: 5px;
+        }
+
+       .onmousehover .bar1{
+            -webkit-transform: rotate(-45deg) translate(-9px ,6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+       .onmousehover .bar2{
+            opacity: 0;
+        }
+        .onmousehover .bar3{
+            -webkit-transform: rotate(45deg) translate(-7px, -5.5px);
+            transform: rotate(45deg) translate(-7px, -5.5px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main" >
+        <div class="main-bar" onclick="menu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+
+    <script>
+
+        const menu=(rotate)=>{
+            rotate.classList.toggle("onmousehover");
+        }
+    </script>
+    
+</body>
+</html>

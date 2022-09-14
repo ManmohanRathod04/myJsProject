@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Show and Hide Text on Click </title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .main{
+            background-color: darkcyan;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .show{
+            width: 70%;
+            height: 30px;
+            margin-bottom: 10px;
+            
+        }
+
+        .show:hover{
+            background-color: #f7f7f7;
+            cursor: pointer;
+            border: none;
+        }
+
+        .firstColumn{
+            display: none;
+            padding: 5px 10px;
+            background-color: #fff;
+            width: 68%;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="main">
+
+            <button class="show">First </button>
+            <div class="firstColumn">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis nemo minus quae quis recusandae odit alias, minima dignissimos, nihil doloremque, iste quia expedita.</p>
+            </div>
+
+            <button class="show">Second </button>
+            <div class="firstColumn">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis nemo minus quae quis recusandae odit alias, minima dignissimos, nihil doloremque, iste quia expedita.</p>
+            </div>
+
+            <button class="show">Third </button>
+            <div class="firstColumn">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis nemo minus quae quis recusandae odit alias, minima dignissimos, nihil doloremque, iste quia expedita.</p>
+            </div>
+        
+
+    </div>
+
+    <script>
+
+const button=document.getElementsByClassName('show');
+
+for(let a=0;a<button.length;a++){
+    button[a].addEventListener('click',function(){
+        this.classList.toggle('active');
+        let firstColumn=this.nextElementSibling;
+        if(firstColumn.style.display==="block"){
+            firstColumn.style.display="none";
+        }
+        else{
+            firstColumn.style.display="block";
+        }
+    });
+}
+
+
+
+    </script>
+    
+</body>
+</html>
